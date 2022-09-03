@@ -89,9 +89,10 @@ function hanndann(settei){//次のボタンを押した時のアラート
             pp.innerText=resu;
             re2.appendChild(pp);
             break;
+        }else{
+            saisyuu(tora,settei);
         }
     }
-saisyuu(tora,settei);
 }
 function saisyuu(toa,settei){//最も大きい数字
     let kke=1;

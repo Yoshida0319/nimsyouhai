@@ -89,10 +89,11 @@ function hanndann(settei){//次のボタンを押した時のアラート
             pp.innerText=resu;
             re2.appendChild(pp);
             break;
-        }else{
+        }else if(j===tora.length-1){
             saisyuu(tora,settei);
         }
     }
+    return;
 }
 function saisyuu(toa,settei){//最も大きい数字
     let kke=1;
@@ -165,32 +166,42 @@ function foor(ok,ss,b,c,kona,kake,settei){//判断
 function osimai(ob,kona,kake,ok,settei){//判断結果表示
     if(ob===0){
         re2.innerText="";
-        const kann=document.createElement('h');
+        const kann=document.createElement('h3');
         kann.innerText="後手必勝";
+        kann.style.color="black";
         re2.appendChild(kann);
     }if(ob===1){
         re2.innerText="";
-        const kann=document.createElement('h');
+        const kann=document.createElement('h3');
         kann.innerText="先手必勝";
+        kann.style.color="black";
         re2.appendChild(kann);
         kanryou(kona,kake,ok,settei);
     }
 }
 function kanryou(kona,kake,ok,settei){//先手が取るべき手の例の表示
     re3.innerText="";
-    const korena=document.createElement('p');
-    const koreka=("先手が取るべき手の例");
+    const bbr=document.createElement('br');
+    const korena=document.createElement('h4');
+    const koreka=("・先手が取るべき手の例");
     korena.innerText=koreka;
     re3.appendChild(korena);
-    const sasake=document.createElement('p');
+    const sasake=document.createElement('span');
     const koreda=(ok);
     sasake.innerText=koreda;
     re3.appendChild(sasake);
-    const okok=ok[kona];
-    const kareta=okok-kake;
-    ok[kona]=kareta;
+    re3.appendChild(bbr);
+    const ya=document.createElement('span');
+    const yazi=('↓');
+    ya.innerText=yazi;
+    re3.appendChild(ya);
+    const br=document.createElement('br');
+    re3.appendChild(br);
     if(settei===1){
-        const saske=document.createElement('p');
+        const okok=ok[kona];
+        const kareta=okok-kake;
+        ok[kona]=kareta;
+        const saske=document.createElement('span');
         const korda=(ok);
         saske.innerText=korda;
         re3.appendChild(saske);
@@ -200,9 +211,10 @@ function kanryou(kona,kake,ok,settei){//先手が取るべき手の例の表示
         let nya=0;
         let ook=ok.length;
         for (let n = 0; n < ook; n++) {
-            const bore=ok.item(n).value;
+            const bore=ok[n];
             if(bore===1){
                 y++;
+                console.log(bore);
             }else{
                 garen++;
                 nya=n;
@@ -211,19 +223,22 @@ function kanryou(kona,kake,ok,settei){//先手が取るべき手の例の表示
         const yy=y/2;
         const yyy=Math.floor(yy);
         if(garen!==1){
-            const saske=document.createElement('p');
+            const okok=ok[kona];
+            const kareta=okok-kake;
+            ok[kona]=kareta;
+            const saske=document.createElement('span');
             const korda=(ok);
             saske.innerText=korda;
             re3.appendChild(saske);
         }else if(yyy===yy){
             ok[nya]=1;
-            const saske=document.createElement('p');
+            const saske=document.createElement('span');
             const korda=(ok);
             saske.innerText=korda;
             re3.appendChild(saske);
         }else{
             ok[nya]=0;
-            const saske=document.createElement('p');
+            const saske=document.createElement('span');
             const korda=(ok);
             saske.innerText=korda;
             re3.appendChild(saske);

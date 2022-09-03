@@ -1,0 +1,69 @@
+body{
+    background-color: #04a6eb;
+    color: #fdffff;
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
+}
+button{
+    padding: 5px 20px;
+    background-color: #337ab7;
+    color: #fdffff;
+}
+#tawaa{
+    height: 30px;
+    border-radius: 3px;
+    border: 2px solid#ddd;
+}
+#tawaa:focus{
+    border: 2px solid#ff9900;
+}
+#nyuryoku{
+    height: 30px;
+    border-radius: 3px;
+    border: 2px solid#ddd;
+}
+#nyuryoku:focus{
+    border: 2px solid#ff9900;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.saisai{
+    display: flex;
+    margin: 0 -2px;
+    border-bottom: 3px solid #5bbee5;
+}
+.sase{
+    display: none;
+}
+.saisai > li{
+    margin: 0 2px;
+    width: 100%;
+    text-align: center;
+}
+.sorasora{
+    display: block;
+    padding: 0.5em 1em;
+    color: #fff;
+    background: #5bbee5;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+#kannga:checked ~ .saisai #tabou,
+#eyou:checked ~ .saisai #tabuu{
+    background-color: #ccc;
+}
+.tab{
+    display: none;
+    padding: 1em;
+    border-bottom: 1px solid #5bbee5;
+    border-left: 1px solid #5bbee5;
+    border-right: 1px solid #5bbee5;
+}
+#kannga:checked ~ .tabu #tt,
+#eyou:checked ~ .tabu #ttb{
+  display: block;
+}

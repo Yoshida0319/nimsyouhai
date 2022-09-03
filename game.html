@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimにおける勝敗判断</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <h1>Nimにおける勝敗判断</h1>
+    <div class="tenntenn">
+        <input name="sasa" id="kannga" class="sase" type="radio" checked>
+        <input name="sasa" id="eyou" class="sase" type="radio">
+        <ul class="saisai">
+            <li>
+                <label id="tabou" class="sorasora" for="kannga">勝敗判断</label>
+            </li>
+            <li>
+                <label id="tabuu" class="sorasora" for="eyou">Nimとは？</label>
+            </li>
+        </ul>
+        <div class="tabu">
+            <div class="tab" id="tt">
+                <input type="number" id="tawaa" size="40" maxlength="10" placeholder="レーン数を入力">
+                <button id="botan">出力</button>
+                <br><br>
+                <div id="result-area"></div>
+                <div id="resultarea"></div>
+                <div id="hissyou"></div>
+                <br><br><br><br>
+                <h6>※半角で入力してください<br>※自然数を入力して下さい</h6>
+            </div>
+            <div class="tab" id="ttb">
+                <h2><font color="black">そもそもNimとは？</font></h2><br>
+                <h3><font color="brown">・Nimとは</font></h3>
+                <h4>2人で行うレクリエーション数学ゲームです。不偏ゲームの代表的な例でもあり、古くから遊ばれている有名な石取りゲームです。</h4>
+                <h3><font color="brown">・Nimのルール説明</font></h3>
+                <h4>①任意の数の石を、任意の列並べます。<br>
+                    ②任意の一つの列から、一つ以上好きなだけ石をとります。パスはできません。<br>
+                    ③これを二人で交互に繰り返します。<br>
+                    勝敗の決着法には二通り存在します。<br>
+                    　1.最後の石を取ったプレーヤーが勝ち<br>
+                    　2.最後の石を取ったプレーヤーが負け<br><br>
+                    ただしNimといえば基本的には1の方を指します。
+                </h4><h3><font color="brown">・Nimの必勝法</font></h3>
+                <h4>
+                    Nimには必勝法が存在し、最初の状態により先手・後手のどちらが勝つのかがわかります。<br>
+                    上述した1のルールのNimの場合、組み合わせゲーム理論によりどのように石を取ると勝利できるのか、簡単に求めることができます。<br>
+                    しかし2の場合、通常のNimの必勝法を反転させたものにはなっておらず、特殊な手の取り方が必要となります。
+                </h4>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

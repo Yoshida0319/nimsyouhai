@@ -14,8 +14,10 @@ bo.onclick=()=>{//最初のボタン押されたときのアラート
     const tt=ta.length;
     if(tt===0){
     return;
-    }else if(isNaN(ta)||ta<1){
+    }else if(ta<1){
         re.innerText="";
+        re2.innerText="";
+        re3.innerText="";
         const paragraph=document.createElement('p');
         const result=("自然数を入力してください");
         paragraph.innerText=result;
@@ -26,11 +28,13 @@ bo.onclick=()=>{//最初のボタン押されたときのアラート
 }
 function sakusei(a){//ボタンを押したときの挙動
     re.innerText="";
+    re2.innerText="";
+    re3.innerText="";
     for (let i = 0; i < a; i++) {//レーンの作製
         const paragraph=document.createElement('input');
         paragraph.type="number";
         paragraph.name="test";
-        var pa=document.createElement('br');
+        const pa=document.createElement('br');
         re.appendChild(paragraph);
         re.appendChild(pa);
     }//ラジオとボタン作り
@@ -77,6 +81,7 @@ function hanndann(settei){//次のボタンを押した時のアラート
         const aa=tora.item(j).value;
         if(aa.length===0 || aa<1){
             re2.innerText="";
+            re3.innerText="";
             const p=document.createElement('p');
             const resul=("全てに自然数を入力してください");
             p.innerText=resul;
@@ -84,6 +89,7 @@ function hanndann(settei){//次のボタンを押した時のアラート
             break;
         }else if(j===tora.length-1 && settei===0){
             re2.innerText="";
+            re3.innerText="";
             const pp=document.createElement('p');
             const resu=("ラジオを選択してください");
             pp.innerText=resu;
@@ -125,7 +131,7 @@ function foor(ok,ss,b,c,kona,kake,settei){//判断
         osimai(c,kona,kake,ok,settei);
     }else{
         var m=0;
-        var hozi=0
+        var hozi=0;
         var sake=0;
         for(let l=0;l<ss.length;l++){
           const sss=ss[l];
@@ -150,7 +156,7 @@ function foor(ok,ss,b,c,kona,kake,settei){//判断
             foor(ok,ss,b,0,-1,0,settei);
         }else if(kona===-1){
             foor(ok,ss,b,1,hozi,2*b,settei);
-        }else if(mm!==mmm){
+        }else if(mm===mmm){
             foor(ok,ss,b,1,kona,kake,settei);
         }else if(sake===0){
             const bbb=2*b;
@@ -166,12 +172,14 @@ function foor(ok,ss,b,c,kona,kake,settei){//判断
 function osimai(ob,kona,kake,ok,settei){//判断結果表示
     if(ob===0){
         re2.innerText="";
+        re3.innerText="";
         const kann=document.createElement('h3');
         kann.innerText="後手必勝";
         kann.style.color="black";
         re2.appendChild(kann);
     }if(ob===1){
         re2.innerText="";
+        re3.innerText="";
         const kann=document.createElement('h3');
         kann.innerText="先手必勝";
         kann.style.color="black";
